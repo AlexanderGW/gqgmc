@@ -7,6 +7,7 @@
  
  2. The following list of files need to be downloaded. Obtain them from
     the gqgmc folder.
+
     Makefile
     Defines.mk
     Patterns.mk
@@ -17,6 +18,8 @@
     main_gui.cc
     plotter.hh
     plotter.cc
+
+    51-gqgmc.rules
     
  3. Create the following subdirectories of your root directory:
     bin
@@ -34,29 +37,34 @@
     'gqgmc_gui' and 'gqgmc' executables which if the build is successful
     will be put into bin subdirectory. Try "make all" as the build
     command. 
+
+ 6a. Copy the 51-gqgmc.rules file to the /etc/udev/rules.d directory and
+    force the reload of udev rules:
     
- 6. With the GQ geiger counter connected to your PC via USB and turned
+    sudo cp ./51-gqgmc.rules /etc/udev/rules.d/51-gqgmc.rules
+    sudo udevadm control --reload-rules
+
+    Disconnect the GQ GMC-300 from the computer and then reconnect.
+    Verify that there exists a /dev/gqgmc in the /dev directory with
+    read/write permission for all users.
+
+    ls -la /dev/gqgmc
+ 
+    
+ 6b. With the GQ geiger counter connected to your PC via USB and turned
     on, start either bin/gqgmc or bin/gqgmc_gui from a console command
-    line. However, you must supply the device name of the USB port on
-    the command line, for example on Ubuntu 11.10 try 
-    "bin/gqgmc /dev/usb/ttyUSB0". On Ubuntu 12.04 try
-    "bin/gqgmc /dev/ttyUSB0".
+    line. The USB device name must be supplied from the command line, e.g.,
+
+    bin/gqgmc /dev/gqgmc
+    bin/gqgmc_gui /dev/gqgmc
     
-    You can try to identify USB port using the following scheme.
-    (a) Before plugging in the GMC-300, run the command "dir /dev/ttyUSB*".
-        Take note of what, if any, devices are listed. After plugging 
-        in the GMC-300 and turning it on, wait one minute,
-        then run the command line command "lsusb".  You should see a line
-        with "Prolific Technology Inc." at the end of the line. This 
-        indicates that Linux has successfully recognized and setup a port
-        for the GMC-300. Now try the command line command "dir /dev/ttyUSB*".
-        The device name for the GMC-300 should be the newest port added
-        to the previous listing of the same command. (On Ubuntu 11.10,
-        try changing /dev/ttyUSB* to /dev/usb/ttyUSB*)
+    The code expects the GQ GMC USB device name to be /dev/gqgmc. This
+    device name was created at step 6a.
     
  7. The following is a list of prerequisites for successful compilation:
  
-    a. Ubuntu Linux 12.04 or 11.10
-    b. GNU g++ 4.6.x compiler installed
+    a. Ubuntu Linux 11.10, 12.04 or 14.04
+    b. GNU g++ 4.6.x or more recent compiler installed
     c. Qt4 Software Development Kit (SDK) installed
        or Qt Creator installed (required only for GUI)
+
