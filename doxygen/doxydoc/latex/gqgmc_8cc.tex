@@ -1,0 +1,124 @@
+\hypertarget{gqgmc_8cc}{\section{/home/phil/\-Projects/gqgmc/gqgmc.cc \-File \-Reference}
+\label{gqgmc_8cc}\index{/home/phil/\-Projects/gqgmc/gqgmc.\-cc@{/home/phil/\-Projects/gqgmc/gqgmc.\-cc}}
+}
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$fstream$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$iomanip$>$}\*
+{\ttfamily \#include $<$ios$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\*
+{\ttfamily \#include $<$termios.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include \char`\"{}gqgmc.\-hh\char`\"{}}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_hex_char_struct}{\-Hex\-Char\-Struct}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::ostream \& \hyperlink{gqgmc_8cc_a946164515ece9aec787090f30233a9bb}{operator$<$$<$} (std\-::ostream \&o, const \hyperlink{struct_hex_char_struct}{\-Hex\-Char\-Struct} \&hs)
+\item 
+static \hyperlink{struct_hex_char_struct}{\-Hex\-Char\-Struct} \hyperlink{gqgmc_8cc_aab6474e7b3786814220e6e83bdbd0f5f}{\-Hex} (unsigned char \-\_\-c)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const string \hyperlink{gqgmc_8cc_aab047f762e57fde0e3aa51403c1c46eb}{get\-\_\-serial\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-S\-E\-R\-I\-A\-L$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_a6ea9b60d0f71a1d2a1ab08e584044fe0}{get\-\_\-version\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-V\-E\-R$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_a27f0112ab0d4f47f1be989a81615fd5a}{get\-\_\-voltage\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-V\-O\-L\-T$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_a53d6b3bcfd25959b1e3e3255ae3bb111}{get\-\_\-cpm\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-C\-P\-M$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_afca15715387c5e2756293b6d3b201bea}{get\-\_\-cps\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-C\-P\-S$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_ae2097c94fe75c79b58df1c4b38d9043d}{get\-\_\-cfg\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-C\-F\-G$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_a7478cf18aaa7c8b31b7069665907418e}{erase\-\_\-cfg\-\_\-cmd} = \char`\"{}$<$\-E\-C\-F\-G$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_a89a6a6f656c6895920fbf8ddef6022a3}{update\-\_\-cfg\-\_\-cmd} = \char`\"{}$<$\-C\-F\-G\-U\-P\-D\-A\-T\-E$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_ad7aab12b8fc6e67cd59fd8bb18b7378f}{turn\-\_\-on\-\_\-cps\-\_\-cmd} = \char`\"{}$<$\-H\-E\-A\-R\-T\-B\-E\-A\-T1$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_ab94fcbec72c9cdb91459077e899a3231}{turn\-\_\-off\-\_\-cps\-\_\-cmd} = \char`\"{}$<$\-H\-E\-A\-R\-T\-B\-E\-A\-T0$>$$>$\char`\"{}
+\item 
+static const string \hyperlink{gqgmc_8cc_aa9cf71267e747e750bdab878a905f042}{turn\-\_\-off\-\_\-pwr\-\_\-cmd} = \char`\"{}$<$\-P\-O\-W\-E\-R\-O\-F\-F$>$$>$\char`\"{}
+\item 
+static float const \hyperlink{gqgmc_8cc_a99c297bd88c24c2ab037da2526f3cc5c}{k\-New\-\_\-\-Firmware} = 2.\-15f
+\item 
+static uint32\-\_\-t const \hyperlink{gqgmc_8cc_a652edd87f4fe0680661791807caad4b2}{k\-N\-V\-M\-Size} = 256
+\item 
+static struct termios \hyperlink{gqgmc_8cc_ab4595a4c5785577c2fe2b882ba3d74f8}{settings}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Define the class and its methods describing the capabilities of the \-G\-Q \-Electronics \-L\-L\-C \-Geiger-\/\-Muller \-Counter (\-G\-Q \-G\-M\-C). this code applies to model 300 and later geiger counters. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{gqgmc_8cc_aab6474e7b3786814220e6e83bdbd0f5f}{\index{gqgmc.\-cc@{gqgmc.\-cc}!\-Hex@{\-Hex}}
+\index{\-Hex@{\-Hex}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{\-Hex}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Hex\-Char\-Struct} {\bf \-Hex} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{\-\_\-c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_aab6474e7b3786814220e6e83bdbd0f5f}
+\hypertarget{gqgmc_8cc_a946164515ece9aec787090f30233a9bb}{\index{gqgmc.\-cc@{gqgmc.\-cc}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{o, }
+\item[{const {\bf \-Hex\-Char\-Struct} \&}]{hs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a946164515ece9aec787090f30233a9bb}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{gqgmc_8cc_a7478cf18aaa7c8b31b7069665907418e}{\index{gqgmc.\-cc@{gqgmc.\-cc}!erase\-\_\-cfg\-\_\-cmd@{erase\-\_\-cfg\-\_\-cmd}}
+\index{erase\-\_\-cfg\-\_\-cmd@{erase\-\_\-cfg\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{erase\-\_\-cfg\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf erase\-\_\-cfg\-\_\-cmd} = \char`\"{}$<$\-E\-C\-F\-G$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a7478cf18aaa7c8b31b7069665907418e}
+\hypertarget{gqgmc_8cc_ae2097c94fe75c79b58df1c4b38d9043d}{\index{gqgmc.\-cc@{gqgmc.\-cc}!get\-\_\-cfg\-\_\-cmd@{get\-\_\-cfg\-\_\-cmd}}
+\index{get\-\_\-cfg\-\_\-cmd@{get\-\_\-cfg\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{get\-\_\-cfg\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf get\-\_\-cfg\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-C\-F\-G$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_ae2097c94fe75c79b58df1c4b38d9043d}
+\hypertarget{gqgmc_8cc_a53d6b3bcfd25959b1e3e3255ae3bb111}{\index{gqgmc.\-cc@{gqgmc.\-cc}!get\-\_\-cpm\-\_\-cmd@{get\-\_\-cpm\-\_\-cmd}}
+\index{get\-\_\-cpm\-\_\-cmd@{get\-\_\-cpm\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{get\-\_\-cpm\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf get\-\_\-cpm\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-C\-P\-M$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a53d6b3bcfd25959b1e3e3255ae3bb111}
+\hypertarget{gqgmc_8cc_afca15715387c5e2756293b6d3b201bea}{\index{gqgmc.\-cc@{gqgmc.\-cc}!get\-\_\-cps\-\_\-cmd@{get\-\_\-cps\-\_\-cmd}}
+\index{get\-\_\-cps\-\_\-cmd@{get\-\_\-cps\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{get\-\_\-cps\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf get\-\_\-cps\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-C\-P\-S$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_afca15715387c5e2756293b6d3b201bea}
+\hypertarget{gqgmc_8cc_aab047f762e57fde0e3aa51403c1c46eb}{\index{gqgmc.\-cc@{gqgmc.\-cc}!get\-\_\-serial\-\_\-cmd@{get\-\_\-serial\-\_\-cmd}}
+\index{get\-\_\-serial\-\_\-cmd@{get\-\_\-serial\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{get\-\_\-serial\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf get\-\_\-serial\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-S\-E\-R\-I\-A\-L$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_aab047f762e57fde0e3aa51403c1c46eb}
+\-Here we declare local constants which are the \-A\-S\-C\-I\-I strings for the various commands to the \-G\-Q \-G\-M\-C. \-These are not declared as data members of the \-G\-Q\-G\-M\-C class because there is just no need to do so. \-The user never need know the actual string commands because there is a dedicated public method for each command.
+
+\-All commands start with '$<$'. \-That is followed by \-A\-S\-C\-I\-I text, followed by \char`\"{}$>$$>$\char`\"{}. \-Commands which take binary data as parameters must be dynamically constructed within the command method. \hypertarget{gqgmc_8cc_a6ea9b60d0f71a1d2a1ab08e584044fe0}{\index{gqgmc.\-cc@{gqgmc.\-cc}!get\-\_\-version\-\_\-cmd@{get\-\_\-version\-\_\-cmd}}
+\index{get\-\_\-version\-\_\-cmd@{get\-\_\-version\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{get\-\_\-version\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf get\-\_\-version\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-V\-E\-R$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a6ea9b60d0f71a1d2a1ab08e584044fe0}
+\hypertarget{gqgmc_8cc_a27f0112ab0d4f47f1be989a81615fd5a}{\index{gqgmc.\-cc@{gqgmc.\-cc}!get\-\_\-voltage\-\_\-cmd@{get\-\_\-voltage\-\_\-cmd}}
+\index{get\-\_\-voltage\-\_\-cmd@{get\-\_\-voltage\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{get\-\_\-voltage\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf get\-\_\-voltage\-\_\-cmd} = \char`\"{}$<$\-G\-E\-T\-V\-O\-L\-T$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a27f0112ab0d4f47f1be989a81615fd5a}
+\hypertarget{gqgmc_8cc_a99c297bd88c24c2ab037da2526f3cc5c}{\index{gqgmc.\-cc@{gqgmc.\-cc}!k\-New\-\_\-\-Firmware@{k\-New\-\_\-\-Firmware}}
+\index{k\-New\-\_\-\-Firmware@{k\-New\-\_\-\-Firmware}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{k\-New\-\_\-\-Firmware}]{\setlength{\rightskip}{0pt plus 5cm}float const {\bf k\-New\-\_\-\-Firmware} = 2.\-15f\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a99c297bd88c24c2ab037da2526f3cc5c}
+\hypertarget{gqgmc_8cc_a652edd87f4fe0680661791807caad4b2}{\index{gqgmc.\-cc@{gqgmc.\-cc}!k\-N\-V\-M\-Size@{k\-N\-V\-M\-Size}}
+\index{k\-N\-V\-M\-Size@{k\-N\-V\-M\-Size}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{k\-N\-V\-M\-Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t const {\bf k\-N\-V\-M\-Size} = 256\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a652edd87f4fe0680661791807caad4b2}
+\hypertarget{gqgmc_8cc_ab4595a4c5785577c2fe2b882ba3d74f8}{\index{gqgmc.\-cc@{gqgmc.\-cc}!settings@{settings}}
+\index{settings@{settings}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{settings}]{\setlength{\rightskip}{0pt plus 5cm}struct termios {\bf settings}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_ab4595a4c5785577c2fe2b882ba3d74f8}
+\hypertarget{gqgmc_8cc_ab94fcbec72c9cdb91459077e899a3231}{\index{gqgmc.\-cc@{gqgmc.\-cc}!turn\-\_\-off\-\_\-cps\-\_\-cmd@{turn\-\_\-off\-\_\-cps\-\_\-cmd}}
+\index{turn\-\_\-off\-\_\-cps\-\_\-cmd@{turn\-\_\-off\-\_\-cps\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{turn\-\_\-off\-\_\-cps\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf turn\-\_\-off\-\_\-cps\-\_\-cmd} = \char`\"{}$<$\-H\-E\-A\-R\-T\-B\-E\-A\-T0$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_ab94fcbec72c9cdb91459077e899a3231}
+\hypertarget{gqgmc_8cc_aa9cf71267e747e750bdab878a905f042}{\index{gqgmc.\-cc@{gqgmc.\-cc}!turn\-\_\-off\-\_\-pwr\-\_\-cmd@{turn\-\_\-off\-\_\-pwr\-\_\-cmd}}
+\index{turn\-\_\-off\-\_\-pwr\-\_\-cmd@{turn\-\_\-off\-\_\-pwr\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{turn\-\_\-off\-\_\-pwr\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf turn\-\_\-off\-\_\-pwr\-\_\-cmd} = \char`\"{}$<$\-P\-O\-W\-E\-R\-O\-F\-F$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_aa9cf71267e747e750bdab878a905f042}
+\hypertarget{gqgmc_8cc_ad7aab12b8fc6e67cd59fd8bb18b7378f}{\index{gqgmc.\-cc@{gqgmc.\-cc}!turn\-\_\-on\-\_\-cps\-\_\-cmd@{turn\-\_\-on\-\_\-cps\-\_\-cmd}}
+\index{turn\-\_\-on\-\_\-cps\-\_\-cmd@{turn\-\_\-on\-\_\-cps\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{turn\-\_\-on\-\_\-cps\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf turn\-\_\-on\-\_\-cps\-\_\-cmd} = \char`\"{}$<$\-H\-E\-A\-R\-T\-B\-E\-A\-T1$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_ad7aab12b8fc6e67cd59fd8bb18b7378f}
+\hypertarget{gqgmc_8cc_a89a6a6f656c6895920fbf8ddef6022a3}{\index{gqgmc.\-cc@{gqgmc.\-cc}!update\-\_\-cfg\-\_\-cmd@{update\-\_\-cfg\-\_\-cmd}}
+\index{update\-\_\-cfg\-\_\-cmd@{update\-\_\-cfg\-\_\-cmd}!gqgmc.cc@{gqgmc.\-cc}}
+\subsubsection[{update\-\_\-cfg\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf update\-\_\-cfg\-\_\-cmd} = \char`\"{}$<$\-C\-F\-G\-U\-P\-D\-A\-T\-E$>$$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{gqgmc_8cc_a89a6a6f656c6895920fbf8ddef6022a3}
