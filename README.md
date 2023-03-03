@@ -1,4 +1,14 @@
+# GQGMC driver (Raspberry Pi)
+Forked from https://sourceforge.net/p/gqgmc/code/ci/master/tree/
 
+Updated `make` config to build `gqgmc` driver only, compatible with Raspberry Pi (`CPUSIZE` to `mbe32`).
+
+With `main` test printing CPS every second, in a short loop
+
+# Author
+Phil Gillaspy
+
+# Original README
 
  INSTALLATION INSTRUCTIONS
  
