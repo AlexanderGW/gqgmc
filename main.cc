@@ -7,6 +7,8 @@
 // Usage: gqgmc <usb-port-device-name> <command>
 // Example: gqgmc /dev/ttyUSB0 cpm
 
+// Available commands: cpm, cps
+
 #include <chrono>
 #include <csignal>
 #include <string>
@@ -107,32 +109,36 @@ main(int argc, char **argv) {
   }
   
   // Output CPS
-  // else if (gqgmc_command == "cps") {
-  //   uint16_t cps = 0;
+  else if (gqgmc_command == "cps") {
+    uint16_t cps = 0;
 
-  //   gqgmc->turnOnCPS();
+    cout << "CPS On" << endl;
+    gqgmc->turnOnCPS();
+    if (gqgmc->getErrorCode() != eNoProblem)
+      outError(*gqgmc);
 
-  //   while(1) {
-  //     if (sigExit)
-  //       break;
+    while(1) {
+      if (sigExit)
+        break;
       
-  //     cps = gqgmc->getAutoCPS();
-  //     if (gqgmc->getErrorCode() == eNoProblem)
-  //     {
-  //       cout << dec << "s=" << i << " " << cps << endl;  // debug
-  //     }
-  //     else
-  //       outError(*gqgmc);
+      cps = gqgmc->getAutoCPS();
+      if (gqgmc->getErrorCode() == eNoProblem) {
+        stringstream msg;
+        msg << "CPS:" << cps;
+        outMessage(msg.str());
+        // cout << dec << "s=" << i << " " << cps << endl;  // debug
+      } else
+        outError(*gqgmc);
 
-  //     sleep(1);
-  //   } // end for loop
+      sleep(1);
+    } // end for loop
 
-  //   // Turn off CPS reporting
-  //   cout << "turning off CPS" << endl;
-  //   gqgmc->turnOffCPS();
-  //   if (gqgmc->getErrorCode() != eNoProblem)
-  //     outError(*gqgmc);
-  // }
+    // Turn off CPS reporting
+    cout << "CPS Off" << endl;
+    gqgmc->turnOffCPS();
+    if (gqgmc->getErrorCode() != eNoProblem)
+      outError(*gqgmc);
+  }
   
   // Unknown command
   else {

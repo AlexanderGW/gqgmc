@@ -3,7 +3,18 @@ Forked from https://sourceforge.net/p/gqgmc/code/ci/master/tree/
 
 Updated `make` config to build `gqgmc` driver only, compatible with Raspberry Pi (`CPUSIZE` to `mbe32`).
 
-With `main` running a loop, printing a ISO-8601 timestamp and CPM line, every second.
+With `main` running a loop, printing a ISO-8601 timestamp and requested datapoint line, every second.
+
+## Available commands
+`cpm` for Counts Per Minute (default).
+
+`cps` for Counts Per Second.
+
+## Usage
+`./bin/gqgmc <usb-port-device-name> <command>`
+
+## Example
+`./bin/gqgmc /dev/ttyUSB0 [cpm]`
 
 ## Original Author
 Based on work by Phil Gillaspy
