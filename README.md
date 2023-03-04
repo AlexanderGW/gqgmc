@@ -3,12 +3,12 @@ Forked from https://sourceforge.net/p/gqgmc/code/ci/master/tree/
 
 Updated `make` config to build `gqgmc` driver only, compatible with Raspberry Pi (`CPUSIZE` to `mbe32`).
 
-With `main` test printing CPM every second, in a short loop
+With `main` running a loop, printing a ISO-8601 timestamp and CPM line, every second.
 
-# Author
-Phil Gillaspy
+## Original Author
+Based on work by Phil Gillaspy
 
-# Original README
+## Original README
 
  INSTALLATION INSTRUCTIONS
  
