@@ -1,11 +1,12 @@
-# GQGMC driver (Raspberry Pi)
+# GQ Geiger-Müller counter (GMC) CPM/CPS data feed
 Forked from https://sourceforge.net/p/gqgmc/code/ci/master/tree/
 
-Updated `make` config to build `gqgmc` driver only, compatible with Raspberry Pi (`CPUSIZE` to `mbe32`).
+## Changes made
+Updated `make` configs to build `gqgmc` driver only, compatible with Raspberry Pi (`CPUSIZE` to `mbe32`).
 
 With `main` running a loop, printing a ISO-8601 timestamp and requested datapoint line, every second.
 
-## Available commands
+## Commands
 `cpm` for Counts Per Minute (default).
 
 `cps` for Counts Per Second.
