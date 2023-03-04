@@ -14,8 +14,13 @@ With `main` running a loop, printing a ISO-8601 timestamp and requested datapoin
 ## Usage
 `./bin/gqgmc <usb-port-device-name> <command>`
 
-## Example
-`./bin/gqgmc /dev/ttyUSB0 [cpm]`
+Install `51-gqgmc.rules` at `/etc/udev/rules.d` (configured for GMC-300E Plus) to map `/dev/gqgmc` otherwise provide the correct `tty` when calling command, i.e. `/dev/ttyUSB1`
+
+### Default
+`./bin/gqgmc [/dev/gqgmc] [cpm]`
+
+## Testing
+GQ GMC-300E Plus
 
 ## Original Author
 Based on work by Phil Gillaspy

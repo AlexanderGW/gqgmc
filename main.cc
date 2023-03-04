@@ -5,7 +5,7 @@
 // Demonstration program for GQ GMC (geiger-muller counter).
 
 // Usage: gqgmc <usb-port-device-name> <command>
-// Example: gqgmc /dev/ttyUSB0 cpm
+// Example: gqgmc /dev/gqgmc cpm
 
 // Available commands: cpm, cps
 
@@ -66,10 +66,6 @@ main(int argc, char **argv) {
   else if (argc == 3) {
     usb_device = argv[1];
     gqgmc_command = argv[2];
-  } else {
-    cout << "Usage: gqgmc <usb-port-device-name> <command>" << endl;
-    cout << "Example: gqgmc /dev/ttyUSB0 cpm" << endl;
-    return 0;
   }
 
   // Instantiate the GQGMC object on the heap

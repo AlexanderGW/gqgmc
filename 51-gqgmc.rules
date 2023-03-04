@@ -1,7 +1,7 @@
 # If modified do "sudo udevadm control --reload-rules"
 # Then unplug and replug GQ GMC-300
 
-# works on ubuntu 14.04
-SUBSYSTEM=="usb", ATTR{idVendor}=="067b", ATTRS{idProduct}=="2303", MODE:="666", GROUP="plugdev"
+# works on Raspbian with GQ GMC-300E Plus
+SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="666", GROUP="plugdev"
 
-SUBSYSTEM=="tty", KERNEL=="ttyUSB*", ATTRS{idVendor}=="067b", MODE:="666", SYMLINK+="gqgmc"
+SUBSYSTEM=="tty", KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", MODE:="666", SYMLINK+="gqgmc"
