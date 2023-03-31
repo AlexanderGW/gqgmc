@@ -22,6 +22,9 @@ Install `51-gqgmc.rules` at `/etc/udev/rules.d` (configured for GMC-300E Plus) t
 ## Testing
 GQ GMC-300E Plus
 
+## UI
+Work in progress: [Next.js with D3](https://github.com/AlexanderGW/gqgmc-ui)
+
 ## Original Author
 Based on work by Phil Gillaspy
 
